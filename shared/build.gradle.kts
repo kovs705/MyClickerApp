@@ -28,7 +28,14 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.2")
+
+                implementation("io.ktor:ktor-client-content-negotiation:2.3.3")
+                implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.3")
+
+                runtimeOnly("org.jetbrains.kotlinx:kotlinx-serialization-core:1.5.1")
+
+                api("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
             }
         }
         val commonTest by getting {
@@ -45,4 +52,8 @@ android {
     defaultConfig {
         minSdk = 24
     }
+}
+dependencies {
+    implementation("androidx.compose.foundation:foundation-android:1.5.4")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
 }
